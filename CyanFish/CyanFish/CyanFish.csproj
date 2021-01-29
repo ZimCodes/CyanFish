@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DF026C12-017E-40A4-8B95-2DD4EF2A0023}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CyanFish</RootNamespace>
+    <AssemblyName>CyanFish</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MonoGamePlatform>Windows</MonoGamePlatform>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>bomb.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Bomb.cs" />
+    <Compile Include="BombSpawner.cs" />
+    <Compile Include="Buttons\RetryButton.cs" />
+    <Compile Include="Enemy\Shark.cs" />
+    <Compile Include="Enemy\SharkSpawner.cs" />
+    <Compile Include="Game1.cs" />
+    <Compile Include="Buttons\PlayButton.cs" />
+    <Compile Include="ScoreManager.cs" />
+    <Compile Include="Screen\EndScreen.cs" />
+    <Compile Include="Screen\PlayScreen.cs" />
+    <Compile Include="Screen\GameScene.cs" />
+    <Compile Include="Screen\GameSceneManager.cs" />
+    <Compile Include="Screen\IntroScreen.cs" />
+    <Compile Include="Player\Player.cs" />
+    <Compile Include="Player\PlayerController.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Screen\SwitchScreenManager.cs" />
+    <Compile Include="Screen\TutorialScreen.cs" />
+    <Compile Include="Buttons\TutorialButton.cs" />
+    <Compile Include="SoundManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MonoGame.Framework">
+      <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\Windows\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bomb.ico" />
+    <Content Include="Content\Audio\BGSong.wav" />
+    <Content Include="Content\Audio\Chomp.wav" />
+    <Content Include="Content\Audio\Gulp.wav" />
+    <Content Include="Content\Audio\SoundCue.wav" />
+    <Content Include="Content\bombAlive.png" />
+    <Content Include="Content\bombExplosion.png" />
+    <Content Include="Content\CoralReef.png" />
+    <Content Include="Content\Creditbutton.png" />
+    <Content Include="Content\Instruction.png" />
+    <Content Include="Content\MenuBg.png" />
+    <Content Include="Content\MoveLeft.png" />
+    <Content Include="Content\MoveRight.png" />
+    <Content Include="Content\playbutton.png" />
+    <Content Include="Content\Retrybutton.png" />
+    <Content Include="Content\SharkMoving.png" />
+    <Content Include="Content\Title.png" />
+    <Content Include="Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <MonoGameContentReference Include="Content\Content.mgcb" />
+    <None Include="app.manifest" />
+    <None Include="Content\font.spritefont" />
+    <None Include="Content\pause.spritefont" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MonoGameLibrary\MonoGameLibrary.csproj">
+      <Project>{aad7c5c6-aa67-45c6-8b7c-22906fa79e9e}</Project>
+      <Name>MonoGameLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
